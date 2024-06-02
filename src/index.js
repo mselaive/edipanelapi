@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3001 // Port number
+const port = 3306 // Port number
 const routes = require('./api/endPoints');
 const cors = require('cors')
 
@@ -9,10 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT']
-}));
+app.use(cors());
 
 app.use('/', routes);
 
