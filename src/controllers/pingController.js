@@ -1,5 +1,10 @@
 const connection = require('../models/db');
 
 module.exports.ping = (req, res) => {
-    res.json({message: 'pong'});
+    try {
+        res.send('pong');
+    }
+    catch(e) {
+        // Manejo de errores
+    }
 };
