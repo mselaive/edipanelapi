@@ -4,7 +4,16 @@
       { "src": "./src/index.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "handle": "vercel", "src": "/.*" }
+      {
+        "routes": [
+          { "src": "/ping", "dest": "/api/ping" },
+          { "src": "/visitors", "dest": "/api/visitors" },
+          { "src": "/login", "dest": "/api/login" },
+          { "src": "/addvisitor", "dest": "/api/addvisitor" },
+          { "src": "/residents/:building/:apartment_number", "dest": "/api/residents/:building/:apartment_number" },
+          { "src": "/parking", "dest": "/api/parking" }
+        ]
+      }
     ],
     "env": {
       "NODE_ENV": "production"
